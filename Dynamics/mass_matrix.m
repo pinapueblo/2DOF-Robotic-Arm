@@ -1,5 +1,7 @@
 function M = mass_matrix(q, params)
 
+    t2 = q(2);
+
     %initialize parameters
     l1 = params.l1;
     l2 = params.l2;
@@ -7,7 +9,6 @@ function M = mass_matrix(q, params)
     m2 = params.m2;
     I1 = params.I1;
     I2 = params.I2;
-    t2 = params.t2;
 
     %compute mass matrix
     m11 = (m1+m2)*l1^2 + m2*l2^2 + 2*m2*l1*l2*cos(t2) + I1 + I2;
